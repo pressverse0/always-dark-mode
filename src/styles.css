@@ -316,9 +316,16 @@
 
   /* Branded scrollbars, mode-aware through --signal / --ink */
   html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
     scrollbar-width: thin;
     scrollbar-color: var(--signal) color-mix(in oklab, var(--ink) 8%, transparent);
-    scroll-behavior: smooth;
   }
 
   ::-webkit-scrollbar {
@@ -326,10 +333,28 @@
     height: 12px;
   }
 
-  ::-webkit-scrollbar-track {
+  /* No stepper arrows at the ends of any scrollbar */
+  ::-webkit-scrollbar-button,
+  ::-webkit-scrollbar-button:start,
+  ::-webkit-scrollbar-button:end,
+  ::-webkit-scrollbar-button:vertical:start,
+  ::-webkit-scrollbar-button:vertical:end,
+  ::-webkit-scrollbar-button:horizontal:start,
+  ::-webkit-scrollbar-button:horizontal:end,
+  ::-webkit-scrollbar-button:single-button,
+  ::-webkit-scrollbar-button:double-button {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track-piece {
     background: color-mix(in oklab, var(--ink) 6%, transparent);
     border-radius: 999px;
   }
+
 
   ::-webkit-scrollbar-thumb {
     border-radius: 999px;
