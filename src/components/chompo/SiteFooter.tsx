@@ -6,15 +6,6 @@ const NAV_TWO = ["About Us", "Terms of Use", "Privacy Policy", "The Team"];
 export function SiteFooter() {
   return (
     <footer className="relative bg-ink pt-16 text-cream">
-      {/* red drip top edge */}
-      <div className="absolute inset-x-0 top-0 -translate-y-full" aria-hidden="true">
-        <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="block h-10 w-full sm:h-14">
-          <path
-            d="M0 0h1200v18c-22 0-22 26-44 26S1134 18 1112 18s-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30-22 26-44 26-22-26-44-26-22 30-44 30-22-30-44-30Z"
-            fill="var(--signal)"
-          />
-        </svg>
-      </div>
 
       <div className="mx-auto grid max-w-[1180px] gap-10 px-6 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.2fr]">
         <ul className="space-y-4">
