@@ -1,25 +1,6 @@
 import { Reveal } from "./Reveal";
 import aboutImage from "@/assets/about-comic.jpg";
 
-const principles = [
-  {
-    name: "Precision",
-    copy: "Every query, index and contract deliberately chosen.",
-  },
-  {
-    name: "Reliability",
-    copy: "Systems that hold under concurrent, real-world load.",
-  },
-  {
-    name: "Scalability",
-    copy: "Multi-tenant foundations that grow without rewrites.",
-  },
-  {
-    name: "Clean Architecture",
-    copy: "Boundaries that keep products maintainable for years.",
-  },
-];
-
 const meta = [
   { label: "Version", value: "v4.0" },
   { label: "File name", value: "About_Mostafa.psd" },
@@ -31,7 +12,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden section-y comic-noise"
+      className="relative isolate overflow-hidden py-16 lg:py-24 comic-noise"
     >
       {/* Keycap grid backdrop — the reference's keyboard plane */}
       <div className="pointer-events-none absolute inset-0 -z-10 keycap-grid opacity-[0.55]" />
@@ -39,13 +20,13 @@ export function About() {
       <div className="pointer-events-none absolute inset-0 -z-10 scanlines" />
 
       <div className="shell">
-        {/* Top meta rail — VERSION / FILE NAME / STATUS */}
+        {/* Top meta rail — VERSION / FILE NAME / STATUS / RUNTIME */}
         <Reveal>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-5 border-b border-border pb-6 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 border-b border-border pb-5 sm:grid-cols-4">
             {meta.map((m) => (
               <div key={m.label} className="min-w-0">
                 <p className="eyebrow">{m.label}</p>
-                <p className="mt-1.5 truncate font-mono text-xs text-foreground/85 sm:text-sm">
+                <p className="mt-1 truncate font-mono text-xs text-foreground/85 sm:text-sm">
                   {m.value}
                 </p>
               </div>
@@ -53,7 +34,7 @@ export function About() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-14 lg:grid-cols-[0.85fr_1fr] lg:items-center">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1fr] lg:items-center">
           {/* Comic panel */}
           <Reveal>
             <figure className="comic-panel group relative">
@@ -73,7 +54,7 @@ export function About() {
             </figure>
 
             {/* Keycaps */}
-            <div className="mt-5 flex gap-3" aria-hidden>
+            <div className="mt-4 flex gap-3" aria-hidden>
               {["C", "V"].map((k) => (
                 <span key={k} className="keycap">
                   {k}
@@ -89,13 +70,13 @@ export function About() {
 
             <h2
               data-text="Engineering for reliability and scale"
-              className="glitch display mt-5 text-[clamp(2.25rem,5vw,4.25rem)]"
+              className="glitch display mt-4 text-[clamp(2rem,4.5vw,3.75rem)]"
             >
               Engineering for reliability and scale
             </h2>
 
             {/* Terminal window — Story Description.txt */}
-            <div className="terminal mt-8">
+            <div className="terminal mt-5">
               <div className="terminal-bar">
                 <span className="font-mono text-[11px] tracking-[0.14em] text-foreground/75">
                   Story_Description.txt
@@ -109,7 +90,7 @@ export function About() {
                   <span>✕</span>
                 </span>
               </div>
-              <div className="space-y-4 p-5 font-mono text-[13px] leading-relaxed text-muted-foreground sm:p-6 sm:text-sm">
+              <div className="space-y-3 p-4 font-mono text-[13px] leading-relaxed text-muted-foreground sm:p-5 sm:text-sm">
                 <p>
                   I build the technical core behind products people depend on to
                   reserve time: high-performance, secure, multi-tenant systems
@@ -130,7 +111,7 @@ export function About() {
             </div>
 
             {/* Pasting progress */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3">
               <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
                 &gt; Pasting…
               </span>
@@ -144,20 +125,10 @@ export function About() {
                 ))}
               </span>
             </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {principles.map((p) => (
-                <div key={p.name} className="surface surface-hover p-6">
-                  <p className="display text-xl">{p.name}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    {p.copy}
-                  </p>
-                </div>
-              ))}
-            </div>
           </Reveal>
         </div>
       </div>
     </section>
   );
 }
+
